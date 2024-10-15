@@ -6,7 +6,6 @@ import { Button } from "./ui/button";
 export default function Header() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
-    
       <main className="flex-1">
         <section className="w-full py-12 sm:py-24 md:py-32 lg:py-40 bg-[url('/hero-bg.svg')] bg-cover bg-center">
           <div className="container px-4 md:px-6">
@@ -167,47 +166,7 @@ export default function Header() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-muted-foreground">
-          &copy; 2024 JeevanDaan. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link
-            href="#"
-            className="text-xs hover:underline underline-offset-4"
-            prefetch={false}
-          >
-            Terms of Service
-          </Link>
-          <Link
-            href="#"
-            className="text-xs hover:underline underline-offset-4"
-            prefetch={false}
-          >
-            Privacy Policy
-          </Link>
-        </nav>
-      </footer>
+    
     </div>
-  );
-}
-
-function DropletsIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
-      <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
-    </svg>
   );
 }
