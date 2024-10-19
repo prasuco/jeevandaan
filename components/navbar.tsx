@@ -1,9 +1,26 @@
+"use client";
 import { DropletsIcon } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center">
+    <header
+      className={` sticky top-0 px-4 lg:px-6 h-14 flex items-center  ${isScrolled ? "bg-transparent/5 backdrop-blur-md shadow-md transition-all duration-300" : "bg-transparent"}`}
+    >
       <Link
         href="#"
         className="flex items-center justify-center"
