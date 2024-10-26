@@ -57,6 +57,8 @@ export default function NewsLetterInput() {
       const sendEmail = await fetch(`/api/send-email?email=${values.email}`);
 
       toast.success("Subscribed successfully");
+
+      form.control["_reset"]({ email: "" });
     }
   }
 
