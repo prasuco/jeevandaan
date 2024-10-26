@@ -1,42 +1,5 @@
-"use client";
-
-import { createClient } from "@/utils/supabase/client";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import toast from "react-hot-toast";
-import { useState } from "react";
-import { validEmail } from "@/lib/utils";
-import { Loader } from "lucide-react";
-
-
+import NewsLetterInput from "./newsletterInput";
 const NewsLetter = () => {
-  const supabase = createClient();
-
-  const [email, setEmail] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async () => {
-    if (!validEmail(email!)) {
-      toast.error("Please enter a valid email");
-      return;
-    }
-
-    setLoading(true);
-
-    const { error } = await supabase
-      .from("email_subs")
-      .insert({ email: email! })
-      .select("*");
-
-    if (error) {
-      toast.error(error.message);
-    } else {
-      toast.success("Subscribed successfully");
-    }
-    // settign email null and loading to false
-    setLoading(false);
-    setEmail(null);
-  };
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
@@ -50,30 +13,7 @@ const NewsLetter = () => {
           </p>
         </div>
         <div className="mx-auto w-full max-w-sm space-y-2">
-          <form className="flex gap-2">
-            <Input
-              value={email!}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              type="email"
-              placeholder="Enter Email"
-              className="max-w-lg flex-1"
-            />
-            <Button
-              disabled={loading}
-              onClick={async (e) => {
-                e.preventDefault();
-                if (!email) return;
-
-                await handleSubmit();
-              }}
-              type="submit"
-            >
-              Subscribe
-              {loading && <Loader className="animate-spin" />}
-            </Button>
-          </form>
+          <NewsLetterInput />
           <p className="text-xs text-muted-foreground">
             By signing up, you'll receive updates on new events and campaigns.
           </p>
