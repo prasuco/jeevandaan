@@ -8,6 +8,7 @@ import { useState } from "react";
 import { validEmail } from "@/lib/utils";
 import { Loader } from "lucide-react";
 
+
 const NewsLetter = () => {
   const supabase = createClient();
 
@@ -21,6 +22,7 @@ const NewsLetter = () => {
     }
 
     setLoading(true);
+
     const { error } = await supabase
       .from("email_subs")
       .insert({ email: email! })
