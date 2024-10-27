@@ -22,7 +22,7 @@ const Navbar = () => {
       className={` sticky top-0 px-4 lg:px-6 h-14 flex items-center  ${isScrolled ? "bg-transparent/5 backdrop-blur-md shadow-md transition-all duration-300" : "bg-transparent"}`}
     >
       <Link
-        href="#"
+        href="/"
         className="flex items-center justify-center"
         prefetch={false}
       >

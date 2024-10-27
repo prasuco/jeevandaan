@@ -9,6 +9,35 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      campaign_image: {
+        Row: {
+          campaign_id: number | null
+          created_at: string
+          id: number
+          url: string | null
+        }
+        Insert: {
+          campaign_id?: number | null
+          created_at?: string
+          id?: number
+          url?: string | null
+        }
+        Update: {
+          campaign_id?: number | null
+          created_at?: string
+          id?: number
+          url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "campaign_image_campaign_id_fkey"
+            columns: ["campaign_id"]
+            isOneToOne: false
+            referencedRelation: "campaigns"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       campaigns: {
         Row: {
           created_at: string
