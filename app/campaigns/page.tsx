@@ -13,7 +13,7 @@ export default async function BloodCampaignList() {
   }
 
   return (
-    <div className="bg-[#FFF1F1] min-h-screen">
+    <div className=" min-h-screen">
       <main className="container mx-auto p-4">
         <h2 className="text-3xl font-bold mb-6">Latest Blood Campaigns</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
