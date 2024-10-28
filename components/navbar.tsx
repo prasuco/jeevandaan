@@ -2,6 +2,7 @@
 import { DropletsIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ThemeSwitcher } from "./theme-switcher";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
         <DropletsIcon className="h-6 w-6" />
         <span className="sr-only">JeevanDaan</span>
       </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6">
+      <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
         <Link
           href="/campaigns"
           className="text-sm font-medium hover:underline underline-offset-4"
@@ -58,6 +59,16 @@ const Navbar = () => {
         >
           Contact
         </Link>
+
+        {/* <Link
+          href="#"
+          className="text-sm font-medium hover:underline underline-offset-4"
+          prefetch={false}
+        >
+        <ThemeSwitcher />
+
+        </Link> */}
+
       </nav>
     </header>
   );
