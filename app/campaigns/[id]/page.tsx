@@ -23,7 +23,7 @@ const CampaignDetails = async ({ params }: ICampaignProps) => {
     .eq("campaign", params.id)
     .filter("campaign", "eq", params.id);
 
-  console.log(campaigns_donators);
+
 
   const extractedDonators = campaigns_donators?.map(
     (donator) => donator.donator

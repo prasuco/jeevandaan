@@ -30,7 +30,7 @@ const CampaignCard = ({ campaign }: ICampaignCardProps) => {
           }).format(new Date(campaign.time!))}
         </div>
         <a
-          href="#"
+          href={`campaigns/${campaign.id}`}
           className="absolute bottom-4 right-4 bg-primary text-primary-foreground m-2 flex items-center rounded-full text-sm shadow-md transition"
         >
           <MoveRight className=" m-2  h-4 w-4" />
