@@ -31,9 +31,9 @@ const CampaignCard = ({ campaign }: ICampaignCardProps) => {
         </div>
         <a
           href="#"
-          className="absolute bottom-4 right-4 bg-primary text-primary-foreground px-2 flex items-center rounded-full text-sm shadow-md transition"
+          className="absolute bottom-4 right-4 bg-primary text-primary-foreground m-2 flex items-center rounded-full text-sm shadow-md transition"
         >
-          <MoveRight className=" m-1  h-4 w-4" />
+          <MoveRight className=" m-2  h-4 w-4" />
         </a>
       </CardContent>
     </Card>
